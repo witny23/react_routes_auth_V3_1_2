@@ -1,15 +1,16 @@
-git 02b - nav between routes with <Link>
+git 02c - create a logout button with useNavigate
 
 GOALS
 
 Understand the utilization and implementation of:
 
-    <Link> - is used to set the URL and keep track of browsing history.
-        - Nav links: https://reactrouter.com/docs/en/v6/getting-started/overview#navigation
-        - tutorial: https://reactrouter.com/docs/en/v6/getting-started/tutorial#add-some-links
+    useNavigate 
+        - Navigation: https://reactrouter.com/docs/en/v6/getting-started/overview#navigation
+        - Docs: https://reactrouter.com/docs/en/v6/api#usenavigate
+        - useNavigate instead of useHistory: https://reactrouter.com/docs/en/v6/upgrading/v5#use-usenavigate-instead-of-usehistory
 
 
-
+    Use <Link /> to let the user change the URL or useNavigate to do it yourself (like after form submissions):
 
 
 

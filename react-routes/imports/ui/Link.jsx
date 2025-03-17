@@ -1,14 +1,18 @@
 import React from 'react';
-import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 
 export const Link = () => {
-    const [placeholder, setPlaceholder] = useState("Placeholder for");  
-    return (
+
+  let navigate = useNavigate();
+
+  function onLogout() {
+    navigate("/");
+  }
+  return (
       <>
-        <h1>{placeholder} Link Functional Component!</h1>  
-        <button onClick={() => setPlaceholder("New Placeholder for")}> 
-            change placeholder</button>  
+        <h1>Link Functional Component Placeholder!</h1>  
+        <button onClick={onLogout}> Logout</button>  
       </>
     )
   
