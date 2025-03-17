@@ -7,11 +7,10 @@ Review and set up a template for the react-router project
 
 PROJECT CREATION
 
-meteor create react-router --release 2.6.1
+meteor create react-routes --release 3.2.1
 
-cd react-router
-    meteor npm install react@17.0.2 react-dom@17.0.2 --save 
-    meteor npm install react-router-dom@6.2.2 --save 
+cd react-routes
+
 
     meteor npm install (make sure all dependencies are in place)
 
