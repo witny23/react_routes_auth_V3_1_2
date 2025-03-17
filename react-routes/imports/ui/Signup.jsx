@@ -1,49 +1,31 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Accounts } from 'meteor/accounts-base';
+import {Link} from 'react-router-dom';
+
 
 export const Signup = () => {
 
-
   const [error_state, setError] = useState('');
- 
-  const [formData_state, setFormData] = useState({
-    email: "",
-    password: ""
-  })
 
+  function submitForm(e){
+    e.preventDefault();   // don't send the form anywhere
 
-
-  function submitForm(event){
-    event.preventDefault();   
-
-    Accounts.createUser({email: formData_state.email, password: formData_state.password}, (errorCallbackObject) => {
-      console.log('signup callback error', errorCallbackObject);
-    }); 
-
-                                  
+    setError('something went wrong');   // will be using down the road
   }
 
   return (
     <>
-      <h1>Signup here!</h1>
+      <h1>Signup Here!</h1>
+      {/* use the ternary operator ? if error, show error. if no error, show nothing */}
+      {/* this.state.error_state is set to '' which is falsey */}
       {error_state ? <p>{error_state}</p> : undefined}
       <form onSubmit={submitForm}>
-        <input 
-          type='email' 
-          value={formData_state.email}
-          onChange={(e) => setFormData({...formData_state, email: e.target.value})}
-          placeholder='Email' />
-
-        <input  type='password' 
-                value={formData_state.password} 
-                onChange={(e) => setFormData({...formData_state, password: e.target.value})}
-                placeholder='Password' />
+        <input type='email' name='email' placeholder='Email' />
+        <input type='password' name='password' placeholder='Password' />
         <button>Create Account</button>
       </form>
       <br /><br />
       <Link to="/">Already have an account?</Link>
-  </>
-)
-
-}
+    </>
+  )
+  
+  }
