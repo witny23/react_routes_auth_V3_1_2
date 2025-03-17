@@ -8,25 +8,24 @@ import { PersonalPlace  } from '../imports/ui/PersonalPlace.jsx';
 import { NotFound } from './../imports/ui/NotFound.jsx';
 import { Login } from './../imports/ui/Login.jsx';   
 
-// import { Tracker } from 'meteor/tracker';
+import { PrivateRoute, PublicRoute } from './../imports/ui/RouteDecisions.jsx';     
 
 
 const routes = ( 
 
   <BrowserRouter>
     <Routes>
-      <Route path="/" exact element={<Login />} />
-      <Route path="/signup" element={<Signup />}/>
-      <Route path="/personalPlace" element={<PersonalPlace />}/>
-      <Route path="*" element={<NotFound />} />
+      {/* create a clean means to direct users to the correct component 
+          - non-logged in users: login, signup, notFound - logged in users: personalPlace */}  
+      <Route path="/" exact element={<PublicRoute><Login /></PublicRoute>} />
+      <Route path="/signup" element={<PublicRoute><Signup /></PublicRoute>}/>
+      {/* create a clean means to limit access to private components such as personalPlace */}  
+      <Route path="/personalPlace" element={<PrivateRoute><PersonalPlace /></PrivateRoute>}/>
+      <Route path="*" element={<PublicRoute><NotFound /></PublicRoute>} />
     </Routes>
   </BrowserRouter>
 );
-// no longer using the following - the concept was moved to PersonalPlace.jsx
-// Tracker.autorun(() => {
-//   const isAuthenticated = !!Meteor.userId();
-//   console.log('isAuthenticated ' + isAuthenticated)
-// })
+
 
 
 Meteor.startup(() => {

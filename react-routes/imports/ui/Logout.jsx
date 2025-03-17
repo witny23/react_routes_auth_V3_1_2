@@ -7,9 +7,14 @@ export const Logout = () => {
 
   let navigate = useNavigate();
 
+  function logoutCallback() { // when done logging out, then send to login
+    navigate("/");
+  }
+
   function onLogout() {
-    Accounts.logout();
-    navigate("/");  // now that we know logout() is working, send the user to root
+    // need to logout before send person to login 
+    Accounts.logout(logoutCallback);
+    // navigate("/");  
     console.log('Accounts.logout');  
   }
   return (

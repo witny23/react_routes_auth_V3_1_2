@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// need useNavigate in order to send a logged in person to personalPlace
 import { Link, useNavigate } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 
@@ -19,30 +18,22 @@ export const Login = () => {
   function submitForm(event){
     event.preventDefault();   
 
-    // console.log(formData_state.email + ' ' + formData_state.password);
+
 
     Meteor.loginWithPassword({email: formData_state.email}, formData_state.password, (errorCallbackObject) => {
-      // console.log('signup callback error', errorCallbackObject);
-      // check if there is an error. If not, send the user on
-      if (!!errorCallbackObject){ // if errorCallbackObject is null
+
+      if (!!errorCallbackObject){ 
         console.log('Login callback error', errorCallbackObject);
-        // console.log('Login callback error', errorCallbackObject.reason);
         setError(errorCallbackObject.reason);
       } else {
         navigate("/personalPlace");
       }
-      // CHALLENGE: Repeat the previous in Signup.jsx
     }); 
 
                                   
   }
 
-// We can check if login works by creating a new user, logging out, then loggin in
-      // require('meteor/meteor').Meteor.userId()
-          // very usefull info. If they are not logged in, they will not have an id
-      // require('meteor/meteor').Meteor.user()  - more info on the user (no pw)
-      // require('meteor/accounts-base').Accounts.logout()  - logs user out
-      // require('meteor/meteor').Meteor.userId() - check if they are logged out   
+
 
   return (
     <>
