@@ -1,17 +1,11 @@
-git 05a - Meteor.loginWithPassword({email: formData.email}, formData.password, ...
+git 06a - create a PersonalSpace component with a logout button 
 
 GOALS
 
 Understand the utilization and implementation of:
-
-    - Login.jsx
-        - learn about Meteor.loginWithPassword(user: Object | string, password: string, [callback])
-        - Docs: https://docs.meteor.com/api/accounts.html#Meteor-loginWithPassword
     
-    
-
-
-
+    - Logout.jsx
+        - wire up logout button
 
 
 
