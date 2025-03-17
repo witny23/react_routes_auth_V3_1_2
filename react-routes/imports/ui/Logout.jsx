@@ -5,15 +5,12 @@ import { Accounts } from 'meteor/accounts-base';
 
 export const Logout = () => {
 
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
 
   function onLogout() {
     Accounts.logout();
-
-
-    //  not going to redirect user to login. We will handle that elsewhere to keep logout simple
-    //      remove the navigate
-    // navigate("/");
+    navigate("/");  // now that we know logout() is working, send the user to root
+    console.log('Accounts.logout');  
   }
   return (
       <>
