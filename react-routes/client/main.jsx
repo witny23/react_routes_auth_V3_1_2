@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
-import { useState } from "react";
-// The React useState Hook allows us to track state in a function component.
+import Signup from './../imports/ui/Signup.jsx';
+import Link from './../imports/ui/Link.jsx';
 
-let placeholder = 'this is a placeholder';
+// let placeholder = 'this is a placeholder';
 
 // the following is a class component
 class Signup_Class extends React.Component {
@@ -18,18 +18,7 @@ class Signup_Class extends React.Component {
   }
 }
 
-// the following is a functional component that returns jsx
-const Signup = () => {
-  const [color, setColor] = useState("red");  // color is set to red, setColor is used to update color
-  return (
-    <>
-      <h1>Signup Functional Component!</h1>  
-      <p>The state of color is {color}!</p>  
-      <button onClick={() => setColor("blue")}> blue</button>  
-    </>
-  )
 
-}
 
 // Challenge 1, breakout the Signup component into its own file
 // to do so:
@@ -48,7 +37,8 @@ const Signup = () => {
 Meteor.startup(() => {
   // render(placeholder, document.getElementById('react-target'));
   // render(<Signup_Class />, document.getElementById('react-target'));
-  render(<Signup />, document.getElementById('react-target'));
+  // render(<Signup />, document.getElementById('react-target'));
+  render(<Link />, document.getElementById('react-target'));
 });
 
 

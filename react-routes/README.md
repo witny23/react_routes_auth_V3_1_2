@@ -1,4 +1,4 @@
-git 01b - Class Component vs Functional Component w/ hooks (useState)
+git 01c - Challenge Solution: Class Component vs Functional Component w/ hooks (useState)
 
 GOALS
 
