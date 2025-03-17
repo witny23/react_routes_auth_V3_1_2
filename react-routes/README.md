@@ -1,51 +1,29 @@
-git 01c - Challenge Solution: Class Component vs Functional Component w/ hooks (useState)
+git 02a - set up client side routing: Start
 
 GOALS
 
-    Understand the differencee between functional components and class components
+    Understand the utilization and implementation of:
 
-    functional vs class component comparison: 
-        https://www.twilio.com/blog/react-choose-functional-components 
-    when to use functional or component:
-        https://dev.to/phanimurari/where-to-use-class-component-and-functional-component-1ed5
+    React Router
+    - https://www.w3schools.com/react/react_router.asp
+    - https://reactrouter.com/docs/en/v6/getting-started/overview
 
-    In class components, the render method will be called whenever the state of the components changes.
+    BrowserRouter - A <Router> that uses the HTML5 history API (pushState, replaceState and the popstate event) to keep your UI in sync with the URL.
+            - https://v5.reactrouter.com/web/api/BrowserRouter
 
-    On the other hand, the Functional components render the UI based on the props.
+    Routes - a container consisting of one or more <Route>
 
-    Hooks
-        - Hooks allow function components to have access to state and other React features. Because of this, class components are generally no longer needed.
-        - Hooks allow us to "hook" into React features such as state and lifecycle methods.
-        - Hooks will not work in React class components.
-        - W3C React Hooks: https://www.w3schools.com/react/react_hooks.asp
-        - W3C React useState Hook: https://www.w3schools.com/react/react_usestate.asp
+    Route - An object or Route Element typically with a shape of { path, element } or <Route path element>. The path is a path pattern. When the path pattern matches the current URL, the element will be rendered.
+            - https://reactrouter.com/docs/en/v6/getting-started/concepts
     
-    W3C React State: https://www.w3schools.com/react/react_state.asp
-    
-    When first learning - class Components should be preferred whenever we have a requirement with the state of the component.
-
-    More advanced - functional components can implement Hooks to use the state and other React features even without writing the Class Component
+    Route - to put another way: 
+                Route is the conditionally shown component that renders some UI when its path matches the current URL.
 
 
-CHALLENGE
-
-As found in client/main.jsx
-
-    Challenge 1, breakout the Signup component into its own file to do so:
-        - inside of imports/ui
-        - create the Signup.jsx
-        - define the component and export as default
-        - import and use it in client/main.jsx
-
-    Challenge 2, create a Link functional component to do so:
-        - create imports/ui/Link.jsx
-        - create your own useState hook and change it with a button
-        - import Link into client/main.jsx
-        - render Link (just replace in render)
+    Route Config - A tree of routes objects that will be ranked and matched (with nesting) against the current location to create a branch of route matches.
 
 
-
-Stop runaway node/mongo on windows
+Stop runaway node/mongo on windows (you forgot ctrl c)
 
     taskkill /f /im mongod.exe 
     taskkill /f /im node.exe
